@@ -10,6 +10,7 @@ public class Leg : MonoBehaviour
 
     [SerializeField] private KeyCode leftButton;
     [SerializeField] private KeyCode rightButton;
+    [SerializeField] private float angles;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,12 @@ public class Leg : MonoBehaviour
     {
         if (Input.GetKey(leftButton))
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, -60, speed * Time.fixedDeltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, -1f * angles, speed * Time.fixedDeltaTime));
             Debug.Log("MoveLeft" + rb.ToString());
         }
         else if (Input.GetKey(rightButton))
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 60, speed * Time.fixedDeltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angles, speed * Time.fixedDeltaTime));
             Debug.Log("MoveRight" + rb.ToString());
         }
         else
