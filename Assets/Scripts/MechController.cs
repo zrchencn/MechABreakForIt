@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MechController : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,5 @@ public class MechController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
