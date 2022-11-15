@@ -23,12 +23,12 @@ public class Leg : MonoBehaviour
         if (Input.GetKey(leftButton))
         {
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, -1f * angles, speed * Time.fixedDeltaTime));
-            Debug.Log("MoveLeft" + rb.ToString());
+            // Debug.Log("MoveLeft" + rb.ToString());
         }
         else if (Input.GetKey(rightButton))
         {
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angles, speed * Time.fixedDeltaTime));
-            Debug.Log("MoveRight" + rb.ToString());
+            // Debug.Log("MoveRight" + rb.ToString());
         }
         else
         {
