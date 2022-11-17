@@ -8,8 +8,11 @@ public class Limb : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] private float angles;
+    [SerializeField] private float angleLeft;
+    [SerializeField] private float angleRight;
+
     [SerializeField] private float balanceForce;
+    [SerializeField] private float balanceAngle;
     private State state;
 
     public enum State
@@ -28,15 +31,20 @@ public class Limb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("state: " + state);
         if (state == State.IDLE)
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 0, balanceForce * Time.fixedDeltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, balanceAngle, balanceForce * Time.fixedDeltaTime));
         }
         else
         {
-            float direction = state == State.LEFT ? -1f : 1f;
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, direction * angles, speed * Time.fixedDeltaTime));
+            if (state == State.LEFT)
+            {
+                rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angleLeft, speed * Time.fixedDeltaTime));
+            }
+            else
+            {
+                rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angleRight, speed * Time.fixedDeltaTime));
+            }
         }
     }
 
@@ -44,5 +52,4 @@ public class Limb : MonoBehaviour
     {
         state = toSet;
     }
-
 }

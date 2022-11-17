@@ -12,14 +12,16 @@ public class LimbSelector : MonoBehaviour
     [SerializeField] private KeyCode p2DownButton;
     [SerializeField] private KeyCode p2LeftButton;
     [SerializeField] private KeyCode p2RightButton;
-    [SerializeField] private string p1Limb = null;
-    [SerializeField] private string p2Limb = null;
     [SerializeField] public Limb leg1;
     [SerializeField] public Limb leg2;
     [SerializeField] public Limb arm1;
     [SerializeField] public Limb arm2;
-    private bool p1LegSelected;
-    private bool p2LegSelected;
+    [SerializeField] public Limb forearm1;
+    [SerializeField] public Limb forearm2;
+    [SerializeField] public Limb hand1;
+    [SerializeField] public Limb hand2;
+    public bool p1LegSelected;
+    public bool p2LegSelected;
 
     // Start is called before the first frame update
     void Start()
@@ -59,12 +61,13 @@ public class LimbSelector : MonoBehaviour
             p2LegSelected = !p2LegSelected;
         }
 
-        handlePlayerControl(p1LeftButton, p1RightButton, p1LegSelected, leg1, arm1);
-        handlePlayerControl(p2LeftButton, p2RightButton, p2LegSelected, leg2, arm2);
+        handlePlayerControl(p1LeftButton, p1RightButton, p1LegSelected, leg1, arm1, forearm1, hand1);
+        handlePlayerControl(p2LeftButton, p2RightButton, p2LegSelected, leg2, arm2, forearm2, hand2);
     }
 
 
-    private void handlePlayerControl(KeyCode leftButton, KeyCode rightButton, bool legSelected, Limb leg, Limb arm)
+    private void handlePlayerControl(KeyCode leftButton, KeyCode rightButton, bool legSelected, Limb leg, Limb arm,
+        Limb forearm, Limb hand)
     {
         if (Input.GetKey(leftButton))
         {
@@ -75,6 +78,8 @@ public class LimbSelector : MonoBehaviour
             else
             {
                 arm.setState(Limb.State.LEFT);
+                forearm.setState(Limb.State.LEFT);
+                hand.setState(Limb.State.LEFT);
             }
         }
         else if (Input.GetKey(rightButton))
@@ -86,12 +91,16 @@ public class LimbSelector : MonoBehaviour
             else
             {
                 arm.setState(Limb.State.RIGHT);
+                forearm.setState(Limb.State.RIGHT);
+                hand.setState(Limb.State.RIGHT);
             }
         }
         else
         {
             leg.setState(Limb.State.IDLE);
             arm.setState(Limb.State.IDLE);
+            forearm.setState(Limb.State.IDLE);
+            hand.setState(Limb.State.IDLE);
         }
     }
 }
