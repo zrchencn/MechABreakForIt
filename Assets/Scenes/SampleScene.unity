@@ -875,7 +875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRotation: 0
   rb: {fileID: 1369430930}
-  force: 30
+  force: 1000
 --- !u!50 &986190782
 Rigidbody2D:
   serializedVersion: 4
@@ -1029,9 +1029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1300
   rb: {fileID: 1340871947}
-  leftButton: 276
-  rightButton: 275
   angles: 90
+  balanceForce: 1000
 --- !u!50 &1340871947
 Rigidbody2D:
   serializedVersion: 4
@@ -1660,7 +1659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRotation: 0
   rb: {fileID: 1369430932}
-  force: 30
+  force: 1000
 --- !u!50 &1384627908
 Rigidbody2D:
   serializedVersion: 4
@@ -1771,7 +1770,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369430921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1693f4b425cac74e9bf89c1e9e15c0a, type: 3}
   m_Name: 
@@ -1789,13 +1788,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369430921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80f0f801c51ad3f48927cd2f1a7ad392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   angles: 0
   rb: {fileID: 986190782}
+--- !u!114 &1574873185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369430921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f535f06f29c03b40bc84c73e905dce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1300
+  rb: {fileID: 986190782}
+  angles: 180
+  balanceForce: 300
 --- !u!1 &1681007601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1970,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369430917}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df5f3d95b29dad0478c564abb1839320, type: 3}
   m_Name: 
@@ -1985,8 +2000,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1UpButton: 119
   p1DownButton: 115
+  p1LeftButton: 97
+  p1RightButton: 100
   p2UpButton: 273
   p2DownButton: 274
+  p2LeftButton: 276
+  p2RightButton: 275
+  p1Limb: 
+  p2Limb: 
+  leg1: {fileID: 1884316275}
+  leg2: {fileID: 1294242997}
+  arm1: {fileID: 2112555282}
+  arm2: {fileID: 1574873185}
 --- !u!50 &1884316267
 Rigidbody2D:
   serializedVersion: 4
@@ -2105,9 +2130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1300
   rb: {fileID: 1884316267}
-  leftButton: 97
-  rightButton: 100
   angles: 90
+  balanceForce: 1000
 --- !u!114 &1956402359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2292,7 +2316,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369430918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1693f4b425cac74e9bf89c1e9e15c0a, type: 3}
   m_Name: 
@@ -2310,10 +2334,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369430918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80f0f801c51ad3f48927cd2f1a7ad392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   angles: 0
   rb: {fileID: 2112555271}
+--- !u!114 &2112555282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369430918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f535f06f29c03b40bc84c73e905dce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1300
+  rb: {fileID: 2112555271}
+  angles: 180
+  balanceForce: 300

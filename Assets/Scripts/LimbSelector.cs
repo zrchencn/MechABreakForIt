@@ -6,67 +6,92 @@ public class LimbSelector : MonoBehaviour
 {
     [SerializeField] private KeyCode p1UpButton;
     [SerializeField] private KeyCode p1DownButton;
+    [SerializeField] private KeyCode p1LeftButton;
+    [SerializeField] private KeyCode p1RightButton;
     [SerializeField] private KeyCode p2UpButton;
     [SerializeField] private KeyCode p2DownButton;
+    [SerializeField] private KeyCode p2LeftButton;
+    [SerializeField] private KeyCode p2RightButton;
     [SerializeField] private string p1Limb = null;
     [SerializeField] private string p2Limb = null;
+    [SerializeField] public Limb leg1;
+    [SerializeField] public Limb leg2;
+    [SerializeField] public Limb arm1;
+    [SerializeField] public Limb arm2;
+    private bool p1LegSelected;
+    private bool p2LegSelected;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        p1LegSelected = true;
+        p2LegSelected = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(p1UpButton))
+        if (Input.GetKeyDown(p1DownButton))
         {
-            //disable Left Leg script
-            GameObject.Find("LLeg1").GetComponent<Leg>().enabled = false;
-            //enable Left Arm scripts
-            GameObject.Find("LArm1").GetComponent<Arm>().enabled = true;
-            GameObject.Find("LArm2").GetComponent<LowerArm>().enabled = true;
-            //disable Left Default Arm scripts
-            GameObject.Find("LArm1").GetComponent<DefaultArmPos>().enabled = false;
-            GameObject.Find("LArm2").GetComponent<DefaultArmPos>().enabled = false;
-            p1Limb = "arm";
+            if (p1LegSelected)
+            {
+                leg1.setState(Limb.State.IDLE);
+            }
+            else
+            {
+                arm1.setState(Limb.State.IDLE);
+            }
+
+            p1LegSelected = !p1LegSelected;
         }
-        else if (Input.GetKey(p1DownButton))
+
+        if (Input.GetKeyDown(p2DownButton))
         {
-            //disable Left Arm scripts
-            GameObject.Find("LArm1").GetComponent<Arm>().enabled = false;
-            GameObject.Find("LArm2").GetComponent<LowerArm>().enabled = false;
-            //enable Left Default Arm scripts
-            GameObject.Find("LArm1").GetComponent<DefaultArmPos>().enabled = true;
-            GameObject.Find("LArm2").GetComponent<DefaultArmPos>().enabled = true;
-            //enable Left Leg script
-            GameObject.Find("LLeg1").GetComponent<Leg>().enabled = true;
-            p1Limb = "leg";
+            if (p2LegSelected)
+            {
+                leg2.setState(Limb.State.IDLE);
+            }
+            else
+            {
+                arm2.setState(Limb.State.IDLE);
+            }
+
+            p2LegSelected = !p2LegSelected;
         }
-        else if (Input.GetKey(p2UpButton))
+
+        handlePlayerControl(p1LeftButton, p1RightButton, p1LegSelected, leg1, arm1);
+        handlePlayerControl(p2LeftButton, p2RightButton, p2LegSelected, leg2, arm2);
+    }
+
+
+    private void handlePlayerControl(KeyCode leftButton, KeyCode rightButton, bool legSelected, Limb leg, Limb arm)
+    {
+        if (Input.GetKey(leftButton))
         {
-            //disable Right Leg script
-            GameObject.Find("RLeg1").GetComponent<Leg>().enabled = false;
-            //enable Right Arm scripts
-            GameObject.Find("RArm1").GetComponent<Arm>().enabled = true;
-            GameObject.Find("RArm2").GetComponent<LowerArm>().enabled = true;
-            //disable Right Default Arm script
-            GameObject.Find("RArm1").GetComponent<DefaultArmPos>().enabled = false;
-            GameObject.Find("RArm2").GetComponent<DefaultArmPos>().enabled = false;
-            p2Limb = "arm";
+            if (legSelected)
+            {
+                leg.setState(Limb.State.LEFT);
+            }
+            else
+            {
+                arm.setState(Limb.State.LEFT);
+            }
         }
-        else if (Input.GetKey(p2DownButton))
+        else if (Input.GetKey(rightButton))
         {
-            //disable Right Arm scripts
-            GameObject.Find("RArm1").GetComponent<Arm>().enabled = false;
-            GameObject.Find("RArm2").GetComponent<LowerArm>().enabled = false;
-            //enable Right Default Arm script
-            GameObject.Find("RArm1").GetComponent<DefaultArmPos>().enabled = true;
-            GameObject.Find("RArm2").GetComponent<DefaultArmPos>().enabled = true;
-            //enable Right Leg script
-            GameObject.Find("RLeg1").GetComponent<Leg>().enabled = true;
-            p2Limb = "leg";
+            if (legSelected)
+            {
+                leg.setState(Limb.State.RIGHT);
+            }
+            else
+            {
+                arm.setState(Limb.State.RIGHT);
+            }
+        }
+        else
+        {
+            leg.setState(Limb.State.IDLE);
+            arm.setState(Limb.State.IDLE);
         }
     }
 }
