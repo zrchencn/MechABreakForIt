@@ -12,7 +12,8 @@ public class LegPush : MonoBehaviour
     [SerializeField] private KeyCode p2RightButton;
     [SerializeField] private Rigidbody2D mech;
     [SerializeField] private float thrust;
-
+    public bool p1LegSelected;
+    public bool p2LegSelected;
     public float positionRadius;
     public LayerMask ground;
     public Transform playerPos;
@@ -27,21 +28,29 @@ public class LegPush : MonoBehaviour
     void Update()
     {
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-        if (isOnGround == true && Input.GetKeyUp(p1LeftButton))
+        if (p1LegSelected)
         {
-            mech.AddForce(Vector2.left * thrust);
+            if (isOnGround == true && Input.GetKeyUp(p1LeftButton))
+            {
+                mech.AddForce(Vector2.left * thrust);
+            }
+            else if (isOnGround == true && Input.GetKeyUp(p1RightButton))
+            {
+                mech.AddForce(Vector2.right * thrust);
+            }
         }
-        else if (isOnGround == true && Input.GetKeyUp(p2LeftButton))
+
+        if (p2LegSelected)
         {
-            mech.AddForce(Vector2.left * thrust);
-        }
-        else if (isOnGround == true && Input.GetKeyUp(p1RightButton))
-        {
-            mech.AddForce(Vector2.right * thrust);
-        }
-        else if (isOnGround == true && Input.GetKeyUp(p2RightButton))
-        {
-            mech.AddForce(Vector2.right * thrust);
+            if (isOnGround == true && Input.GetKeyUp(p2LeftButton))
+            {
+                mech.AddForce(Vector2.left * thrust);
+            }
+
+            else if (isOnGround == true && Input.GetKeyUp(p2RightButton))
+            {
+                mech.AddForce(Vector2.right * thrust);
+            }
         }
     }
 }
