@@ -57,7 +57,7 @@ public class Grab : MonoBehaviour
         }
 
     }
-    private void LeftCollisionEnter2D (Collision2D leftCol)
+    private void LeftCollisionEnter2D(Collision2D leftCol)
     {
         if (leftHandGrab)
         {
@@ -73,7 +73,7 @@ public class Grab : MonoBehaviour
             }
         }
     }
-    private void RightCollisionEnter2D (Collision2D rightCol)
+    private void RightCollisionEnter2D(Collision2D rightCol)
     {
         if (rightHandGrab)
         {
@@ -89,4 +89,24 @@ public class Grab : MonoBehaviour
             }
         }
     }
+    /* private LayerMask interactable;
+     public LimbSelector limbSelector;
+     void Start()
+     {
+
+     }
+
+     void Update()
+     {
+         if (limbSelector.p1LegSelected == false)
+         {
+             p1collisionCheck();
+         }
+
+         if (limbSelector.p2LegSelected == false)
+         {
+             p2collisionCheck();
+         }    
+
+     }*/
 }

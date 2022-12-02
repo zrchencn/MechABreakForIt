@@ -13,6 +13,7 @@ public class Respawn : MonoBehaviour
     [SerializeField] private Transform topRightPos;
     [SerializeField] private Transform bottomLeftPos;
     [SerializeField] private float dropHeight;
+    [SerializeField] private float minusX;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Respawn : MonoBehaviour
     void Update()
     {
         float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
         if(Physics2D.OverlapArea(topRightPos.position, bottomLeftPos.position, ground))
             {
             isOnGround = true;
@@ -34,7 +36,7 @@ public class Respawn : MonoBehaviour
 
         if (isOnGround)
         {
-            lastPlayerPos = currentPos.position;
+            lastPlayerPos = currentPos.position + new Vector3(horizontalInput - minusX, verticalInput + dropHeight, 0);
         }
 
         if (Physics2D.OverlapArea(topRightPos.position, bottomLeftPos.position, deathbox))
@@ -44,7 +46,7 @@ public class Respawn : MonoBehaviour
 
         if (dead)
         {
-            transform.position = lastPlayerPos + new Vector3(0, verticalInput + dropHeight, 0);
+            transform.position = lastPlayerPos;
             dead = false;
         }
 
@@ -54,6 +56,6 @@ public class Respawn : MonoBehaviour
         Debug.Log("isOnGround = " + isOnGround.ToString());
          
       */
-        Debug.Log("lastPlayerPos = " + lastPlayerPos.ToString());
+       // Debug.Log("lastPlayerPos = " + lastPlayerPos.ToString());
     }
 }
