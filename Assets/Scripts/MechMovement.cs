@@ -47,7 +47,9 @@ public class MechMovement : MonoBehaviour
         if (Input.GetKey(p1LeftButton) && Input.GetKey(p2LeftButton))
         {
             direction = "left";
-            mech.AddForce(Vector2.left * thrust);
+            Vector2 force = Vector2.left * thrust;
+            mech.AddForce(force);
+            Debug.Log(force);
             //make the mech continue walking left
         }
         else if (Input.GetKey(p1RightButton) && Input.GetKey(p2RightButton))
