@@ -11,6 +11,7 @@ public class Elevator : MonoBehaviour
     private Rigidbody2D elevator;
     private Rigidbody2D mech;
     [SerializeField] private float speed;
+    [SerializeField] private Transform destination;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,10 @@ public class Elevator : MonoBehaviour
     void Update()
     {
         isOnElevator = Physics2D.OverlapCircle(playerPos.position, positionRadius, elevatorMask);
+        float step = speed * Time.deltaTime;
         if(isOnElevator)
         {
-            elevator.AddForce(Vector2.up * speed);
+            transform.position = Vector3.MoveTowards(transform.position, destination.position, step);
         }
     }
 }

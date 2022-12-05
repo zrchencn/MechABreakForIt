@@ -394,7 +394,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &72841873
 BoxCollider2D:
@@ -881,7 +881,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.57}
-  m_ConnectedAnchor: {x: 0, y: -0.4925}
+  m_ConnectedAnchor: {x: 0, y: -0.49250007}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -909,7 +909,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &199670013
 BoxCollider2D:
@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 243010246}
   - component: {fileID: 243010245}
   - component: {fileID: 243010244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41876,15 +41876,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -83.991104
+      value: -73.64
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.0318327
+      value: -12.69
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42187,7 +42187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.02, y: 2.1625, z: -10}
+  m_LocalPosition: {x: -114.4, y: 3.3625, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42415,7 +42415,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &525242073
 BoxCollider2D:
@@ -42475,7 +42475,7 @@ GameObject:
   - component: {fileID: 585853244}
   - component: {fileID: 585853243}
   - component: {fileID: 585853245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42500,6 +42500,7 @@ MonoBehaviour:
     m_Bits: 128
   playerPos: {fileID: 1074446956}
   speed: 10
+  destination: {fileID: 0}
 --- !u!212 &585853241
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42560,7 +42561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585853239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.31, y: -0.74, z: 0}
+  m_LocalPosition: {x: 44.31, y: -0.71, z: 0}
   m_LocalScale: {x: 5.0792, y: 0.4561, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42601,7 +42602,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585853239}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -42630,7 +42631,7 @@ MonoBehaviour:
   button:
     serializedVersion: 2
     m_Bits: 512
-  upForce: 100
+  speed: 2
   platformUp: 1
   platformDown: 0
   hand1Top: {fileID: 2075703030}
@@ -43457,7 +43458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756744701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.02, y: 2.1625, z: -10}
+  m_LocalPosition: {x: -114.4, y: 3.3625, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44032,7 +44033,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.48}
-  m_ConnectedAnchor: {x: 0.46875, y: -0.58249986}
+  m_ConnectedAnchor: {x: 0.46875, y: -0.5825}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -44158,7 +44159,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.45}
-  m_ConnectedAnchor: {x: 0.019302368, y: -0.4975698}
+  m_ConnectedAnchor: {x: 0.019302368, y: -0.49757004}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!233 &835819204
@@ -44576,15 +44577,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.37417
+      value: -77.74
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.376375
+      value: -12.84
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45090,7 +45091,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &986190783
 BoxCollider2D:
@@ -47338,7 +47339,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1340871948
 BoxCollider2D:
@@ -47646,15 +47647,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5b83183c76a50f74599c1620ebfa989e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5b83183c76a50f74599c1620ebfa989e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -115.02
+      value: -114.4
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5b83183c76a50f74599c1620ebfa989e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5b83183c76a50f74599c1620ebfa989e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48116,7 +48117,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1369430929
 BoxCollider2D:
@@ -48163,7 +48164,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1369430931
 BoxCollider2D:
@@ -48210,7 +48211,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1369430933
 BoxCollider2D:
@@ -48277,7 +48278,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.54}
-  m_ConnectedAnchor: {x: 0, y: -0.5225}
+  m_ConnectedAnchor: {x: 0, y: -0.52250004}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -48623,7 +48624,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1384627909
 BoxCollider2D:
@@ -49542,15 +49543,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -108.69975
+      value: -68.7
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.9333916
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50505,7 +50506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680722590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.7, y: 16.9, z: 0}
+  m_LocalPosition: {x: 44.31, y: 16.9, z: 0}
   m_LocalScale: {x: 1.3486099, y: 0.2554, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50727,6 +50728,29 @@ MonoBehaviour:
   bottomLeftPos: {fileID: 1238687348}
   dropHeight: 50
   minusX: 100
+--- !u!114 &1698668878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698668874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291a62475136a4e46b5e6c2bf4cd5ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandTop: {fileID: 1957442005}
+  rightHandTop: {fileID: 1351862090}
+  leftHandBottom: {fileID: 2075703030}
+  rightHandBottom: {fileID: 1716588545}
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+  p1GrabButton: 304
+  p2GrabButton: 303
+  leftHand: {fileID: 1369430955}
+  rightHand: {fileID: 1956402370}
 --- !u!1 &1707984092
 GameObject:
   m_ObjectHideFlags: 0
@@ -50904,15 +50928,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -99.544754
+      value: -84
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.0318327
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: fc96fa6525fe5fa40a60579b448fa43c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52019,7 +52043,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1884316268
 BoxCollider2D:
@@ -52062,7 +52086,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.48}
-  m_ConnectedAnchor: {x: -0.46875, y: -0.58249986}
+  m_ConnectedAnchor: {x: -0.46875, y: -0.5825}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -53217,11 +53241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -81.96
+      value: -69.12
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.56
+      value: -12.37
       objectReference: {fileID: 0}
     - target: {fileID: 8415311914098639202, guid: 747d8ef36bd3c9c4dbacdd2beaa57bb2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -54066,7 +54090,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &2112555273
 HingeJoint2D:

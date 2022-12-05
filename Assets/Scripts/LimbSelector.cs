@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LimbSelector : MonoBehaviour
 {
@@ -63,6 +64,13 @@ public class LimbSelector : MonoBehaviour
 
         handlePlayerControl(p1LeftButton, p1RightButton, p1LegSelected, leg1, arm1, forearm1, hand1);
         handlePlayerControl(p2LeftButton, p2RightButton, p2LegSelected, leg2, arm2, forearm2, hand2);
+
+        if (transform.position.y < -10f)
+        {
+            Debug.Log("RESET");
+            SceneManager.LoadScene("Scenes/SampleScene");
+        }
+
     }
 
 
