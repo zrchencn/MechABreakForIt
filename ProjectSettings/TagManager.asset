@@ -50,6 +50,9 @@ TagManager:
   - name: ground
     uniqueID: 3220640561
     locked: 0
+  - name: UI
+    uniqueID: 3060422109
+    locked: 0
   - name: player
     uniqueID: 3694447369
     locked: 0
